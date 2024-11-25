@@ -63,7 +63,7 @@ cover:
     archive: true
     others: false # can be written in front-matter 'cover: true'
   # background: https://s1.vika.cn/space/2022/09/09/aec0dbb7d8b74aecac29572cb929b84a
-  background: https://raw.githubusercontent.com/zhangzc-hub/img/main/img/bc.png
+  background: https://raw.githubusercontent.com/zhangzc-hub/img/main/img/13.webp
   # background: https://raw.githubusercontent.com/zhangzc-hub/img/main/img/11.jpg
   logo: # https://raw.githubusercontent.com/zhangzc-hub/img/main/img/12.jpg
   title: 'ZC程序员'
@@ -268,7 +268,7 @@ plugins:
     duration: 10000       # Duration (ms)
     fade: 1500            # fade duration (ms) (Not more than 1500)
     images:               # For personal use only. At your own risk if used for commercial purposes !!!
-      - https://raw.githubusercontent.com/zhangzc-hub/img/main/img/bc.png
+      - https://raw.githubusercontent.com/zhangzc-hub/img/main/img/13.webp
 
  ############################### Article Layout ############################### > start
 # 文章布局
