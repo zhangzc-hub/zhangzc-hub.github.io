@@ -1,5 +1,5 @@
 ---
-title: newpage
+title: 使用yum安装wget报错
 date: 2025-03-13 16:42:09
 tags:
 - Linux
