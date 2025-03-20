@@ -33,19 +33,19 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>page - ZC程序员</title>
+  <title>CentOS安装Docker\Docker-compose - ZC程序员</title>
   <meta name="keywords" content="docker,技术, 编程, 生活, 创意, 解决方案">
   <meta desc name="description" content="这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。 - ZZC - ZC程序员">
   
 <meta property="og:type" content="article">
-<meta property="og:title" content="page">
+<meta property="og:title" content="CentOS安装Docker\Docker-compose">
 <meta property="og:url" content="http://example.com/2022/03/19/CentOS%E5%AE%89%E8%A3%85Docker/index.html">
 <meta property="og:site_name" content="ZC程序员">
-<meta property="og:description" content="CentOS安装Docker\Docker-composeCentOS安装Docker1、卸载（可选）如果之前安装过旧版本的Docker，可以使用下面命令卸载： 1234567891011yum remove docker \                  docker-client \                  docker-client-latest \">
+<meta property="og:description" content="CentOS安装Docker\Docker-compose[TOC] CentOS安装Docker1、卸载（可选）如果之前安装过旧版本的Docker，可以使用下面命令卸载： 1234567891011yum remove docker \                  docker-client \                  docker-client-latest \">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2022-03-19T05:53:20.000Z">
-<meta property="article:modified_time" content="2025-03-19T06:53:30.175Z">
+<meta property="article:modified_time" content="2025-03-20T07:09:52.093Z">
 <meta property="article:author" content="ZZC">
 <meta property="article:tag" content="docker">
 <meta name="twitter:card" content="summary">
@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1742454429382),
+    lastupdate: new Date(1742454691984),
     sidebar: {
       for_page: ["blogger","category","tagcloud","lastupdate","webinfo","text"],
       for_post: ["toc"],
@@ -2407,7 +2407,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       <h1 class="title" itemprop="name headline">
-        page
+        CentOS安装Docker\Docker-compose
       </h1>
       <div class='new-meta-box'>
         
@@ -2482,7 +2482,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="CentOS安装Docker-Docker-compose"><a href="#CentOS安装Docker-Docker-compose" class="headerlink" title="CentOS安装Docker\Docker-compose"></a>CentOS安装Docker\Docker-compose</h1><h1 id="CentOS安装Docker"><a href="#CentOS安装Docker" class="headerlink" title="CentOS安装Docker"></a>CentOS安装Docker</h1><h2 id="1、卸载（可选）"><a href="#1、卸载（可选）" class="headerlink" title="1、卸载（可选）"></a>1、卸载（可选）</h2><p>如果之前安装过旧版本的Docker，可以使用下面命令卸载：</p>
+    <h1 id="CentOS安装Docker-Docker-compose"><a href="#CentOS安装Docker-Docker-compose" class="headerlink" title="CentOS安装Docker\Docker-compose"></a>CentOS安装Docker\Docker-compose</h1><p>[TOC]</p>
+<h1 id="CentOS安装Docker"><a href="#CentOS安装Docker" class="headerlink" title="CentOS安装Docker"></a>CentOS安装Docker</h1><h2 id="1、卸载（可选）"><a href="#1、卸载（可选）" class="headerlink" title="1、卸载（可选）"></a>1、卸载（可选）</h2><p>如果之前安装过旧版本的Docker，可以使用下面命令卸载：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">yum remove docker \</span><br><span class="line">                  docker-client \</span><br><span class="line">                  docker-client-latest \</span><br><span class="line">                  docker-common \</span><br><span class="line">                  docker-latest \</span><br><span class="line">                  docker-latest-logrotate \</span><br><span class="line">                  docker-logrotate \</span><br><span class="line">                  docker-selinux \</span><br><span class="line">                  docker-engine-selinux \</span><br><span class="line">                  docker-engine \</span><br><span class="line">                  docker-ce</span><br></pre></td></tr></table></figure>
 
 <h2 id="2、安装docker"><a href="#2、安装docker" class="headerlink" title="2、安装docker"></a>2、安装docker</h2><p>首先需要大家虚拟机联网，安装yum工具</p>
@@ -2601,10 +2602,10 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-03-19T14:53:30+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-03-20T15:09:52+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
-    <p>更新于：2025年3月19日</p>
+    <p>更新于：2025年3月20日</p>
   </a>
 </div>
 
@@ -3343,7 +3344,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"ZC程序员"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Linux/","name":"Linux"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/03/19/CentOS安装Docker/","name":"page"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"ZC程序员","url":"http://example.com/","keywords":"技术, 编程, 生活, 创意, 解决方案","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},"publisher":{"@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"page","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/03/19/CentOS%E5%AE%89%E8%A3%85Docker/"},"author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"ZC程序员","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/03/19/CentOS%E5%AE%89%E8%A3%85Docker/","wordCount":0,"datePublished":"2022-03-19T05:53:20.000Z","dateModified":"2025-03-19T06:53:30.175Z","articleSection":"Linux","keywords":"docker","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"ZC程序员"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Linux/","name":"Linux"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2022/03/19/CentOS安装Docker/","name":"CentOS安装Docker\\Docker-compose"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"ZC程序员","url":"http://example.com/","keywords":"技术, 编程, 生活, 创意, 解决方案","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},"publisher":{"@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"CentOS安装Docker\\Docker-compose","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2022/03/19/CentOS%E5%AE%89%E8%A3%85Docker/"},"author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"ZC程序员","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2022/03/19/CentOS%E5%AE%89%E8%A3%85Docker/","wordCount":0,"datePublished":"2022-03-19T05:53:20.000Z","dateModified":"2025-03-20T07:09:52.093Z","articleSection":"Linux","keywords":"docker","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
