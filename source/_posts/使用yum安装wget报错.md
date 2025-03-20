@@ -1,8 +1,8 @@
 ---
 title: 使用yum安装wget报错
-date: 2025-03-13 16:42:09
+date: 2024-01-13 16:42:09
 tags:
-- Linux
+- yum
 categories:
 - Linux
 ---
