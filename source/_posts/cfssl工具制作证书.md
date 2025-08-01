@@ -69,6 +69,8 @@ $ cfssl gencert -initca ca-csr.json | cfssljson -bare ca
 
 `ST` State，州，省
 
+![](https://raw.githubusercontent.com/zhangzc-hub/img/main/img/Snipaste_2025-08-01_16-25-38.jpg)
+
 ## 通过ca签发服务器证书
 
 ```
