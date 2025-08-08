@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/archives/2024/01/"/>
+  
+  <link rel="canonical" href="http://example.com/2024/08/08/springcache框架的使用/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>归档：2024/1 - ZC程序员</title>
-  <meta name="keywords" content="技术, 编程, 生活, 创意, 解决方案">
+  <title>SpringCache框架的使用 - ZC程序员</title>
+  <meta name="keywords" content="redis,技术, 编程, 生活, 创意, 解决方案">
   <meta desc name="description" content="这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。 - ZZC - ZC程序员">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZC程序员">
-<meta property="og:url" content="http://example.com/archives/2024/01/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="SpringCache框架的使用">
+<meta property="og:url" content="http://example.com/2024/08/08/SpringCache%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/index.html">
 <meta property="og:site_name" content="ZC程序员">
-<meta property="og:description" content="这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。">
+<meta property="og:description" content="SpringCache框架的使用1、注解   注解 说明    @EnableCaching  开启缓存注解功能   @Cacheable  在方法执行前spring先查看缓存中是否有数据，如果有数据，则直接返回缓存数据；若没有数据，调用方法并将方法返回值放到缓存中   @CachePut  将方法的返回值放到缓存中   @CacheEvict  将一条或多条数据从缓存中删除   2、导入坐标使用">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2024-08-08T02:27:30.000Z">
+<meta property="article:modified_time" content="2025-08-08T02:39:29.594Z">
 <meta property="article:author" content="ZZC">
-<meta property="article:tag" content="技术, 编程, 生活, 创意, 解决方案">
+<meta property="article:tag" content="redis">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2023,7 +2025,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <!-- Custom Files bodyBegin end-->
     <!-- front-matter body_begin begin -->
     <!-- front-matter body_begin end -->
-    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur " style='opacity: 0' >
+    <header itemscope itemtype="http://schema.org/WPHeader" id="l_header" class="l_header auto shadow floatable blur show" style='opacity: 0' >
   <div class='container'>
   <div id='wrapper'>
     <div class='nav-sub'>
@@ -2326,7 +2328,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="half" class='cover-wrapper  search' style="display: ;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div id="parallax-window"></div>
 
@@ -2383,22 +2385,8 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
         <div class="body-wrapper">
           
 <div id="l_main" class=''>
-	
-		
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2024/01/13/使用yum安装wget报错/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/08/08/SpringCache框架的使用/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="ZC程序员">
   </span>
@@ -2407,81 +2395,266 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2024/01/13/%E4%BD%BF%E7%94%A8yum%E5%AE%89%E8%A3%85wget%E6%8A%A5%E9%94%99/"  itemprop="url">
-        使用yum安装wget报错
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        使用yum安装wget报错使用yum安装报错：Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&amp;arch=x86_64&amp;repo=os&amp;
-安装wget命令
-1yum -y install wget
-
-报错，无法找到镜像
-
-测试是否是网络问题
-
-抓包正常，网络没有问题；尝试更新yu...
-      
     
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      <h1 class="title" itemprop="name headline">
+        SpringCache框架的使用
+      </h1>
+      <div class='new-meta-box'>
         
           
-          <a class='avatar' href='/'><img src='https://raw.githubusercontent.com/zhangzc-hub/img/main/img/12.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/12.jpg">
-            <meta itemprop="name" content="Zhangzechang">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2024-01-13T16:42:09+08:00">2024-01-13</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/Linux/">Linux</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/Linux/" itemprop="url"><span itemprop="name">Linux</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2024/01/13/%E4%BD%BF%E7%94%A8yum%E5%AE%89%E8%A3%85wget%E6%8A%A5%E9%94%99/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/12.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/12.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Zhangzechang</p>
+  </a>
 </div>
 
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/Java/">Java</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/Java/" itemprop="url"><span itemprop="name">Java</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-08-08T10:27:30+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2024年8月8日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.2k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：5 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h1 id="SpringCache框架的使用"><a href="#SpringCache框架的使用" class="headerlink" title="SpringCache框架的使用"></a>SpringCache框架的使用</h1><h2 id="1、注解"><a href="#1、注解" class="headerlink" title="1、注解"></a>1、注解</h2><table>
+<thead>
+<tr>
+<th><strong>注解</strong></th>
+<th><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="">@EnableCaching </a></td>
+<td>开启缓存注解功能</td>
+</tr>
+<tr>
+<td><a href="">@Cacheable </a></td>
+<td>在方法执行前spring先查看缓存中是否有数据，如果有数据，则直接返回缓存数据；若没有数据，调用方法并将方法返回值放到缓存中</td>
+</tr>
+<tr>
+<td><a href="">@CachePut </a></td>
+<td>将方法的返回值放到缓存中</td>
+</tr>
+<tr>
+<td><a href="">@CacheEvict </a></td>
+<td>将一条或多条数据从缓存中删除</td>
+</tr>
+</tbody></table>
+<h2 id="2、导入坐标"><a href="#2、导入坐标" class="headerlink" title="2、导入坐标"></a>2、导入坐标</h2><p>使用Redis作为缓存技术，只需要导入Spring data Redis的maven坐标即可</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-cache&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br><span class="line"></span><br><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;spring-boot-starter-data-redis&lt;/artifactId&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>application.yml</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  redis:</span><br><span class="line">    host: <span class="number">192.168</span><span class="number">.200</span><span class="number">.200</span></span><br><span class="line">    port: <span class="number">6379</span></span><br><span class="line">    password: root@<span class="number">123456</span></span><br><span class="line">    database: <span class="number">0</span></span><br><span class="line">  cache:</span><br><span class="line">    redis:</span><br><span class="line">      time-to-live: <span class="number">1800000</span>   #设置缓存过期时间，可选</span><br></pre></td></tr></table></figure>
+
+<h2 id="3、注解应用"><a href="#3、注解应用" class="headerlink" title="3、注解应用"></a>3、注解应用</h2><h4 id="CachePut注解"><a href="#CachePut注解" class="headerlink" title="@CachePut注解"></a><strong>@CachePut注解</strong></h4><p><a href="">@CachePut </a> 说明： </p>
+<p>​	作用: 将方法返回值，放入缓存</p>
+<p>​	value: 缓存的名称, 每个缓存名称下面可以有很多key</p>
+<p>​	key: 缓存的key  ———-&gt; 支持Spring的表达式语言SPEL语法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* CachePut：将方法返回值放入缓存</span></span><br><span class="line"><span class="comment">* value：缓存的名称，每个缓存名称下面可以有多个key</span></span><br><span class="line"><span class="comment">* key：缓存的key</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@CachePut(value = &quot;userCache&quot;, key = &quot;#user.id&quot;)</span></span><br><span class="line"><span class="meta">@PostMapping</span></span><br><span class="line"><span class="keyword">public</span> User <span class="title function_">save</span><span class="params">(User user)</span>&#123;</span><br><span class="line">    userService.save(user);</span><br><span class="line">    <span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>key的写法如下：</p>
+<p>​	#user.id : #user指的是方法形参的名称, id指的是user的id属性 , 也就是使用user的id属性作为key ;</p>
+<p>​	#user.name: #user指的是方法形参的名称, name指的是user的name属性 ,也就是使用user的name属性作为key ;</p>
+<p>​	#result.id : #result代表方法返回值，该表达式 代表以返回对象的id属性作为key ；</p>
+<p>​	#result.name : #result代表方法返回值，该表达式 代表以返回对象的name属性作为key ；</p>
+<h4 id="CacheEvict注解"><a href="#CacheEvict注解" class="headerlink" title="@CacheEvict注解"></a><strong>@CacheEvict注解</strong></h4><p><a href="">@CacheEvict </a> 说明： </p>
+<p>​	作用: 清理指定缓存</p>
+<p>​	value: 缓存的名称，每个缓存名称下面可以有多个key</p>
+<p>​	key: 缓存的key  ———-&gt; 支持Spring的表达式语言SPEL语法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* CacheEvict：清理指定缓存</span></span><br><span class="line"><span class="comment">* value：缓存的名称，每个缓存名称下面可以有多个key</span></span><br><span class="line"><span class="comment">* key：缓存的key</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@CacheEvict(value = &quot;userCache&quot;,key = &quot;#p0&quot;)</span>  <span class="comment">//#p0 代表第一个参数</span></span><br><span class="line"><span class="comment">//@CacheEvict(value = &quot;userCache&quot;,key = &quot;#root.args[0]&quot;) //#root.args[0] 代表第一个参数</span></span><br><span class="line"><span class="comment">//@CacheEvict(value = &quot;userCache&quot;,key = &quot;#id&quot;) //#id 代表变量名为id的参数</span></span><br><span class="line"><span class="meta">@DeleteMapping(&quot;/&#123;id&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">delete</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span>&#123;</span><br><span class="line">    userService.removeById(id);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//@CacheEvict(value = &quot;userCache&quot;,key = &quot;#p0.id&quot;)   //第一个参数的id属性</span></span><br><span class="line"><span class="comment">//@CacheEvict(value = &quot;userCache&quot;,key = &quot;#user.id&quot;) //参数名为user参数的id属性</span></span><br><span class="line"><span class="comment">//@CacheEvict(value = &quot;userCache&quot;,key = &quot;#root.args[0].id&quot;) //第一个参数的id属性</span></span><br><span class="line"><span class="meta">@CacheEvict(value = &quot;userCache&quot;,key = &quot;#result.id&quot;)</span>         <span class="comment">//返回值的id属性</span></span><br><span class="line"><span class="meta">@PutMapping</span></span><br><span class="line"><span class="keyword">public</span> User <span class="title function_">update</span><span class="params">(User user)</span>&#123;</span><br><span class="line">    userService.updateById(user);</span><br><span class="line">    <span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="Cacheable注解"><a href="#Cacheable注解" class="headerlink" title="@Cacheable注解"></a><strong>@Cacheable注解</strong></h4><p><a href="">@Cacheable </a> 说明: </p>
+<p>​	作用: 在方法执行前，spring先查看缓存中是否有数据，如果有数据，则直接返回缓存数据；若没有数据，调用方法并将方法返回值放到缓存中</p>
+<p>​	value: 缓存的名称，每个缓存名称下面可以有多个key</p>
+<p>​	key: 缓存的key  ———-&gt; 支持Spring的表达式语言SPEL语法</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment">* Cacheable：在方法执行前spring先查看缓存中是否有数据，如果有数据，则直接返回缓存数据；若没有数据，调用方法并将方法返回值放到缓存中</span></span><br><span class="line"><span class="comment">* value：缓存的名称，每个缓存名称下面可以有多个key</span></span><br><span class="line"><span class="comment">* key：缓存的key</span></span><br><span class="line"><span class="comment">*/</span></span><br><span class="line"><span class="meta">@Cacheable(value = &quot;userCache&quot;,key = &quot;#id&quot;)</span></span><br><span class="line"><span class="meta">@GetMapping(&quot;/&#123;id&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> User <span class="title function_">getById</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span>&#123;</span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> userService.getById(id);</span><br><span class="line">    <span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在@Cacheable注解中，提供了两个属性分别为： condition， unless 。</p>
+<p>condition : 表示满足什么条件, 再进行缓存 ;</p>
+<p>unless : 表示满足条件则不缓存 ; 与上述的condition是反向的 ;</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Cacheable：在方法执行前spring先查看缓存中是否有数据，如果有数据，则直接返回缓存数据；若没有数据，调用方法并将方法返回值放到缓存中</span></span><br><span class="line"><span class="comment"> * value：缓存的名称，每个缓存名称下面可以有多个key</span></span><br><span class="line"><span class="comment"> * key：缓存的key</span></span><br><span class="line"><span class="comment"> * condition：条件，满足条件时才缓存数据</span></span><br><span class="line"><span class="comment"> * unless：满足条件则不缓存</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="meta">@Cacheable(value = &quot;userCache&quot;,key = &quot;#id&quot;, unless = &quot;#result == null&quot;)</span></span><br><span class="line"><span class="meta">@GetMapping(&quot;/&#123;id&#125;&quot;)</span></span><br><span class="line"><span class="keyword">public</span> User <span class="title function_">getById</span><span class="params">(<span class="meta">@PathVariable</span> Long id)</span>&#123;</span><br><span class="line">    <span class="type">User</span> <span class="variable">user</span> <span class="operator">=</span> userService.getById(id);</span><br><span class="line">    <span class="keyword">return</span> user;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>在list方法上加注解</strong><a href=""><strong>@Cacheable</strong> </a> </p>
+<p>在list方法中进行查询时，有两个查询条件，如果传递了id，根据id查询； 如果传递了name， 根据name查询，那么我们缓存的key在设计的时候，就需要既包含id，又包含name。 具体的代码实现如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@Cacheable(value = &quot;userCache&quot;,key = &quot;#user.id + &#x27;_&#x27; + #user.name&quot;)</span></span><br><span class="line"><span class="meta">@GetMapping(&quot;/list&quot;)</span></span><br><span class="line"><span class="keyword">public</span> List&lt;User&gt; <span class="title function_">list</span><span class="params">(User user)</span>&#123;</span><br><span class="line">    LambdaQueryWrapper&lt;User&gt; queryWrapper = <span class="keyword">new</span> <span class="title class_">LambdaQueryWrapper</span>&lt;&gt;();</span><br><span class="line">    queryWrapper.eq(user.getId() != <span class="literal">null</span>,User::getId,user.getId());</span><br><span class="line">    queryWrapper.eq(user.getName() != <span class="literal">null</span>,User::getName,user.getName());</span><br><span class="line">    List&lt;User&gt; list = userService.list(queryWrapper);</span><br><span class="line">    <span class="keyword">return</span> list;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+            </blockquote>
           </div>
         
       
-    
-  </section>
+      <!-- 打赏组件 -->
+      
+    </div>
+  
   
     
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-08-08T10:39:29+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2025年8月8日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/redis/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>redis</p></a></div>
+  <span hidden itemprop="keywords">redis</span>
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2025/03/20/Redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Redis集群搭建</p>
+          <p class='content'>Redis集群搭建1、Redis主从集群1.1、集群结构搭建的主从集群结构如图：
+
+共包含三个节点，一个主节点，两个从节点。
+在同一台虚拟机中开启3个redis实例，模拟主从集群，信息如下：
+
+...</p>
+        </a>
+      
+      
+        <a class='next' href='/2024/01/13/%E4%BD%BF%E7%94%A8yum%E5%AE%89%E8%A3%85wget%E6%8A%A5%E9%94%99/'>
+          <p class='title'>使用yum安装wget报错<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>使用yum安装wget报错使用yum安装报错：Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&amp;...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
   
 
 
-	
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2024/08/08/SpringCache%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
+    
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2490,247 +2663,60 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://raw.githubusercontent.com/zhangzc-hub/img/main/img/12.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Zhangzechang</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">ZC程序员</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:18713822182@163.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/zhangzc-hub/zhangzc-hub.github.io.git"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Hello-World/" href="/categories/Hello-World/"
-            active-action="action-categoriesHello-World"
-            ><div class='name'>Hello World</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Java/" href="/categories/Java/"
-            active-action="action-categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            active-action="action-categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/cmd/" href="/categories/cmd/"
-            active-action="action-categoriescmd"
-            ><div class='name'>cmd</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/hexo/" href="/categories/hexo/"
-            active-action="action-categorieshexo"
-            ><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ssl/" href="/categories/ssl/"
-            active-action="action-categoriesssl"
-            ><div class='name'>ssl</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Hello-World/" style="font-size: 14px; color: #999">Hello World</a> <a href="/tags/docker/" style="font-size: 14px; color: #999">docker</a> <a href="/tags/redis/" style="font-size: 24px; color: #555">redis</a> <a href="/tags/ssl/" style="font-size: 14px; color: #999">ssl</a> <a href="/tags/yum/" style="font-size: 14px; color: #999">yum</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px; color: #999">博客</a> <a href="/tags/%E8%AF%AD%E9%9B%80/" style="font-size: 14px; color: #999">语雀</a>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-
-<section class="widget desktop mobile pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-clock WISTERIA fa-fw" aria-hidden="true"></i><span class='name'>最近更新</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2024/08/08/SpringCache%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/"><div class="item"><time>2025-08-08</time><span>Java</span></div><span>SpringCache框架的使用</span></a></li><li><a class="widget-last" href="/2025/07/01/cfssl%E5%B7%A5%E5%85%B7%E5%88%B6%E4%BD%9C%E8%AF%81%E4%B9%A6/"><div class="item"><time>2025-08-01</time><span>ssl</span></div><span>cfssl工具制作证书</span></a></li><li><a class="widget-last" href="/2025/05/21/yuque-dl/"><div class="item"><time>2025-05-21</time><span>cmd</span></div><span>yuque-dl</span></a></li><li><a class="widget-last" href="/2023/11/25/%E5%8D%9A%E5%AE%A2%E5%88%B6%E4%BD%9C/"><div class="item"><time>2025-03-20</time><span>hexo</span></div><span>hexo搭建博客</span></a></li><li><a class="widget-last" href="/2025/03/20/Redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/"><div class="item"><time>2025-03-20</time><span>Linux</span></div><span>Redis集群搭建</span></a></li></ul>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>8 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>11k 字</div>
-        </div>
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2025-08-08 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget text desktop pjax">
-  
-  <header>
-    
-      <a target="_blank" rel="noopener" href='https://github.com/zhangzc-hub/zhangzc-hub.github.io.git'><i class="fab fa-github fa-fw" aria-hidden="true"></i><span class='name'>点个赞吧</span></a>
-    
-  </header>
-
-
-  <div class='content'>
-    
-  </div>
-</section>
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E6%B3%A8%E8%A7%A3"><span class="toc-text">1、注解</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E5%AF%BC%E5%85%A5%E5%9D%90%E6%A0%87"><span class="toc-text">2、导入坐标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3%E3%80%81%E6%B3%A8%E8%A7%A3%E5%BA%94%E7%94%A8"><span class="toc-text">3、注解应用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#CachePut%E6%B3%A8%E8%A7%A3"><span class="toc-text">@CachePut注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#CacheEvict%E6%B3%A8%E8%A7%A3"><span class="toc-text">@CacheEvict注解</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Cacheable%E6%B3%A8%E8%A7%A3"><span class="toc-text">@Cacheable注解</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2750,13 +2736,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -2765,14 +2752,14 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     // header
     var l_header=document.getElementById("l_header");
     
-    l_header.classList.remove("show");
+    l_header.classList.add("show");
     
     
       // cover
       var cover_wrapper=document.querySelector('#l_cover .cover-wrapper');
       var scroll_down=document.getElementById('scroll-down');
-      cover_wrapper.id="half";
-      cover_wrapper.style.display="";
+      cover_wrapper.id="none";
+      cover_wrapper.style.display="none";
       scroll_down.style.display="none";
     
   
@@ -3346,7 +3333,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"ZC程序员"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/archives/","name":"Archive"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/archives/2024/","name":"2024年"}},{"@type":"ListItem","position":4,"item":{"@id":"http://example.com/archives/2024/1/","name":"1月"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"ZC程序员","url":"http://example.com/","keywords":"技术, 编程, 生活, 创意, 解决方案","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},"publisher":{"@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"ZC程序员","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"ZC程序员"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Java/","name":"Java"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/08/08/SpringCache框架的使用/","name":"SpringCache框架的使用"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"ZC程序员","url":"http://example.com/","keywords":"技术, 编程, 生活, 创意, 解决方案","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},"publisher":{"@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"SpringCache框架的使用","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/08/08/SpringCache%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/"},"author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"ZC程序员","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/08/08/SpringCache%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/","wordCount":0,"datePublished":"2024-08-08T02:27:30.000Z","dateModified":"2025-08-08T02:39:29.594Z","articleSection":"Java","keywords":"redis","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
