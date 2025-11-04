@@ -41,11 +41,11 @@
 <meta property="og:title" content="Redis集群搭建">
 <meta property="og:url" content="http://example.com/2025/03/20/Redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/index.html">
 <meta property="og:site_name" content="ZC程序员">
-<meta property="og:description" content="Redis集群搭建1、Redis主从集群[TOC] 1.1、集群结构搭建的主从集群结构如图：  共包含三个节点，一个主节点，两个从节点。 在同一台虚拟机中开启3个redis实例，模拟主从集群，信息如下：    IP PORT 角色    192.168.150.101 7001 master   192.168.150.101 7002 slave   192.168.150.101 7003 s">
+<meta property="og:description" content="Redis集群搭建1、Redis主从集群1.1、集群结构搭建的主从集群结构如图：  共包含三个节点，一个主节点，两个从节点。 在同一台虚拟机中开启3个redis实例，模拟主从集群，信息如下：    IP PORT 角色    192.168.150.101 7001 master   192.168.150.101 7002 slave   192.168.150.101 7003 slave">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
 <meta property="article:published_time" content="2025-03-20T06:36:00.000Z">
-<meta property="article:modified_time" content="2025-03-20T11:57:12.709Z">
+<meta property="article:modified_time" content="2025-03-20T11:59:22.809Z">
 <meta property="article:author" content="ZZC">
 <meta property="article:tag" content="redis">
 <meta name="twitter:card" content="summary">
@@ -1597,7 +1597,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     debug: "env",
     cdn: {"js":{"app":"/js/app.js","parallax":"/js/plugins/parallax.js","rightMenu":"/js/plugins/rightMenu.js","rightMenus":"/js/plugins/rightMenus.js","sites":"/js/plugins/tags/sites.js","friends":"/js/plugins/tags/friends.js","contributors":"/js/plugins/tags/contributors.js","search":"/js/search/hexo.js"},"css":{"style":"/css/style.css"}},
     default: {"avatar":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/avatar/round/3442075.svg","link":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/link/8f277b4ee0ecd.svg","cover":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/cover/76b86c0226ffd.svg","image":"https://unpkg.com/volantis-static@0.0.1654736714924/media/placeholder/image/2659360.svg"},
-    lastupdate: new Date(1742471851454),
+    lastupdate: new Date(1762241193018),
     sidebar: {
       for_page: ["blogger","category","tagcloud","lastupdate","webinfo","text"],
       for_post: ["toc"],
@@ -2482,8 +2482,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 
   <div id="layoutHelper-page-plugins"></div>
   <div id="post-body" itemprop="articleBody">
-    <h1 id="Redis集群搭建"><a href="#Redis集群搭建" class="headerlink" title="Redis集群搭建"></a>Redis集群搭建</h1><h2 id="1、Redis主从集群"><a href="#1、Redis主从集群" class="headerlink" title="1、Redis主从集群"></a>1、Redis主从集群</h2><p>[TOC]</p>
-<h3 id="1-1、集群结构"><a href="#1-1、集群结构" class="headerlink" title="1.1、集群结构"></a>1.1、集群结构</h3><p>搭建的主从集群结构如图：</p>
+    <h1 id="Redis集群搭建"><a href="#Redis集群搭建" class="headerlink" title="Redis集群搭建"></a>Redis集群搭建</h1><h2 id="1、Redis主从集群"><a href="#1、Redis主从集群" class="headerlink" title="1、Redis主从集群"></a>1、Redis主从集群</h2><h3 id="1-1、集群结构"><a href="#1-1、集群结构" class="headerlink" title="1.1、集群结构"></a>1.1、集群结构</h3><p>搭建的主从集群结构如图：</p>
 <p><img src="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/Snipaste_2025-03-20_14-40-01.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/Snipaste_2025-03-20_14-40-01.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
 <p>共包含三个节点，一个主节点，两个从节点。</p>
 <p>在同一台虚拟机中开启3个redis实例，模拟主从集群，信息如下：</p>
@@ -2803,7 +2802,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <div class='new-meta-box'>
       
         
-          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-03-20T19:57:12+08:00">
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-03-20T19:59:22+08:00">
   <a class='notlink'>
     <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
     <p>更新于：2025年3月20日</p>
@@ -2834,10 +2833,31 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     <div class="prev-next">
       
+        <a class='prev' href='/2025/05/21/yuque-dl/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>yuque-dl</p>
+          <p class='content'>语雀文档下载到本地1.下载nodejs 点此直接下载Node.js v22.13.1 去官网查看：
+1https://nodejs.org/zh-cn 
+
+2.win+r打开运行，输入cmd打开...</p>
+        </a>
       
-        <a class='next' href='/2024/01/13/%E4%BD%BF%E7%94%A8yum%E5%AE%89%E8%A3%85wget%E6%8A%A5%E9%94%99/'>
-          <p class='title'>使用yum安装wget报错<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
-          <p class='content'>使用yum安装wget报错使用yum安装报错：Could not retrieve mirrorlist http://mirrorlist.centos.org/?release=7&amp;...</p>
+      
+        <a class='next' href='/2024/08/08/SpringCache%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/'>
+          <p class='title'>SpringCache框架的使用<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>SpringCache框架的使用1、注解
+
+
+注解
+说明
+
+
+
+@EnableCaching 
+开启缓存注解功能
+
+
+@Cacheable 
+在方法执行前spring先查看缓存中是否有数据，如果...</p>
         </a>
       
     </div>
@@ -3545,7 +3565,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"ZC程序员"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Linux/","name":"Linux"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2025/03/20/Redis集群搭建/","name":"Redis集群搭建"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"ZC程序员","url":"http://example.com/","keywords":"技术, 编程, 生活, 创意, 解决方案","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},"publisher":{"@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Redis集群搭建","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/03/20/Redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/"},"author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"ZC程序员","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2025/03/20/Redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/","wordCount":0,"datePublished":"2025-03-20T06:36:00.000Z","dateModified":"2025-03-20T11:57:12.709Z","articleSection":"Linux","keywords":"redis","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"ZC程序员"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/Linux/","name":"Linux"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2025/03/20/Redis集群搭建/","name":"Redis集群搭建"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"ZC程序员","url":"http://example.com/","keywords":"技术, 编程, 生活, 创意, 解决方案","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},"publisher":{"@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"Redis集群搭建","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2025/03/20/Redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/"},"author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"ZC程序员","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2025/03/20/Redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/","wordCount":0,"datePublished":"2025-03-20T06:36:00.000Z","dateModified":"2025-03-20T11:59:22.809Z","articleSection":"Linux","keywords":"redis","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
