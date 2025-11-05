@@ -1,6 +1,6 @@
 ---
 title: 若依框架中使用Velocity模块引擎改造代码生成功能
-date: 2025-11-04 14:10:15
+date: 2025-09-04 14:10:15
 tags:
 - 若依
 categories:
