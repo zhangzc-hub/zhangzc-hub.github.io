@@ -5,8 +5,8 @@
   <meta name="Volantis" content="5.8.0">
   <meta charset="utf-8">
   <!-- SEO相关 -->
-  <meta name="robots" content="noindex,follow">
-  <link rel="canonical" href="http://example.com/categories/hexo/"/>
+  
+  <link rel="canonical" href="http://example.com/2024/08/13/mysql主从复制+读写分离/"/>
   <!-- 渲染优化 -->
     <meta http-equiv='x-dns-prefetch-control' content='on' />
       <link rel='dns-prefetch' href='https://unpkg.com'>
@@ -33,19 +33,21 @@
 
   <!-- feed -->
   <!-- 页面元数据 -->
-  <title>分类：hexo - ZC程序员</title>
-  <meta name="keywords" content="技术, 编程, 生活, 创意, 解决方案">
+  <title>MySQL主从复制+读写分离 - ZC程序员</title>
+  <meta name="keywords" content="MySQL,技术, 编程, 生活, 创意, 解决方案">
   <meta desc name="description" content="这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。 - ZZC - ZC程序员">
   
-<meta property="og:type" content="website">
-<meta property="og:title" content="ZC程序员">
-<meta property="og:url" content="http://example.com/categories/hexo/index.html">
+<meta property="og:type" content="article">
+<meta property="og:title" content="MySQL主从复制+读写分离">
+<meta property="og:url" content="http://example.com/2024/08/13/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6+%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/index.html">
 <meta property="og:site_name" content="ZC程序员">
-<meta property="og:description" content="这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。">
+<meta property="og:description" content="1、MySQL主从复制MySQL主从复制是一个异步的复制过程，底层是基于Mysql数据库自带的 二进制日志 功能。就是一台或多台MySQL数据库（slave，即从库）从另一台MySQL数据库（master，即主库）进行日志的复制，然后再解析日志并应用到自身，最终实现 从库 的数据和 主库 的数据保持一致。MySQL主从复制是MySQL数据库自带功能，无需借助第三方工具。 二进制日志（BINLOG）">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
+<meta property="article:published_time" content="2024-08-13T02:34:26.000Z">
+<meta property="article:modified_time" content="2025-11-05T02:13:30.696Z">
 <meta property="article:author" content="ZZC">
-<meta property="article:tag" content="技术, 编程, 生活, 创意, 解决方案">
+<meta property="article:tag" content="MySQL">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
   <style>
@@ -2326,7 +2328,7 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
   
     
       <!-- see: /layout/_partial/scripts/_ctrl/coverCtrl.ejs -->
-      <div id="none" class='cover-wrapper  search' style="display: none;">
+      <div id="none" class='cover-wrapper post search' style="display: none;">
         
   <div id="parallax-window"></div>
 
@@ -2382,25 +2384,9 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
       <div id="safearea">
         <div class="body-wrapper">
           
-
 <div id="l_main" class=''>
-  
-    
-      
-  <section class="post-list">
-    
-      
-        
-          
-        
-      
-    
-    
-      
-        
-          <div class='post-wrapper'>
-            <div class="post post-v3 white-box reveal shadow floatable blur"  itemscope itemtype="http://schema.org/Article" >
-  <link itemprop="mainEntityOfPage" href="http://example.com/2023/11/25/博客制作/">
+  <article itemscope itemtype="http://schema.org/Article" class="article post white-box reveal md shadow floatable blur article-type-post" id="post" itemscope itemprop="blogPost">
+  <link itemprop="mainEntityOfPage" href="http://example.com/2024/08/13/MySQL主从复制+读写分离/">
   <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
     <meta itemprop="name" content="ZC程序员">
   </span>
@@ -2409,85 +2395,277 @@ if (/*@cc_on!@*/false || (!!window.MSInputMethodContext && !!document.documentMo
     <meta itemprop="description" content="这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。">
   </span>
   
-  
+
+
   
     <span hidden>
       <meta itemprop="image" content="https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png">
     </span>
   
-  
+  <div class="article-meta" id="top">
     
-    <h2 class="article-title"  itemprop="name headline">
-      <a href="/2023/11/25/%E5%8D%9A%E5%AE%A2%E5%88%B6%E4%BD%9C/"  itemprop="url">
-        hexo搭建博客
-      </a>
-    </h2>
-  
-  <div class='md article-desc' itemprop="articleBody">
     
-      
-        hexo搭建博客第一部分Hexo简介Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。
-Hexo搭建步骤
-安装Git
-安装Node.js
-安装Hexo
-GitHub创建个人仓库
-生成SSH添加到GitHub
-将hexo部署到GitHub
-设置个人域名
-发布文章
-
-1. 安装GitGit是目前世界...
-      
     
-  </div>
-  
-    <div class='meta-v3' line_style='solid'>
-      <div>
+      <h1 class="title" itemprop="name headline">
+        MySQL主从复制+读写分离
+      </h1>
+      <div class='new-meta-box'>
         
           
-          <a class='avatar' href='/'><img src='https://raw.githubusercontent.com/zhangzc-hub/img/main/img/12.jpg'></a>
-          <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <meta itemprop="image" content="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/12.jpg">
-            <meta itemprop="name" content="Zhangzechang">
-            <meta itemprop="url" content="/">
-          </span>
-        
-        <time itemprop="dateCreated datePublished" datetime="2023-11-25T18:48:45+08:00">2023-11-25</time>
-        
-          <span class="dot"></span>
-          <a class="category-link" href="/categories/hexo/">hexo</a>
-          
-            <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
-              <a href="/categories/hexo/" itemprop="url"><span itemprop="name">hexo</span></a>
-            </span>
-          
-        
-      </div>
-      
-        <div>
-          <a class='readmore' href='/2023/11/25/%E5%8D%9A%E5%AE%A2%E5%88%B6%E4%BD%9C/' itemprop="url">
-            阅读全文
-          </a>
-        </div>
-      
-    </div>
-  
-
+            
+<div class='new-meta-item author' itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <a itemprop="url" class='author' href="/" rel="nofollow">
+    <img itemprop="image" src="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/12.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/12.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==">
+    <p itemprop="name">Zhangzechang</p>
+  </a>
 </div>
 
+          
+        
+          
+            
+  <div class='new-meta-item category'>
+    <i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i>
+    <a class="category-link" href="/categories/MySQL/">MySQL</a>
+    
+      <span hidden itemprop="about" itemscope itemtype="http://schema.org/Thing">
+        <a href="/categories/MySQL/" itemprop="url"><span itemprop="name">MySQL</span></a>
+      </span>
+    
+  </div>
+
+
+          
+        
+          
+            <div class="new-meta-item date" itemprop="dateCreated datePublished" datetime="2024-08-13T10:34:26+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-calendar-alt fa-fw" aria-hidden="true"></i>
+    <p>发布于：2024年8月13日</p>
+  </a>
+</div>
+
+          
+        
+          
+            
+  <div class="new-meta-item wordcount">
+    <a class='notlink'>
+      <i class="fa-solid fa-keyboard fa-fw" aria-hidden="true"></i>
+      <p>字数：1.4k 字</p>
+    </a>
+  </div>
+  <div class="new-meta-item readtime">
+    <a class='notlink'>
+      <i class="fa-solid fa-hourglass-half fa-fw" aria-hidden="true"></i>
+      <p>时长：5 分钟</p>
+    </a>
+  </div>
+
+
+          
+        
+          
+            
+
+
+
+          
+        
+        <!-- Custom Files topMeta begin-->
+        
+        <!-- Custom Files topMeta end-->
+      </div>
+    
+  </div>
+
+
+  <div id="layoutHelper-page-plugins"></div>
+  <div id="post-body" itemprop="articleBody">
+    <h1 id="1、MySQL主从复制"><a href="#1、MySQL主从复制" class="headerlink" title="1、MySQL主从复制"></a>1、<strong>MySQL主从复制</strong></h1><p>MySQL主从复制是一个异步的复制过程，底层是基于Mysql数据库自带的 <strong>二进制日志</strong> 功能。就是一台或多台MySQL数据库（slave，即<strong>从库</strong>）从另一台MySQL数据库（master，即<strong>主库</strong>）进行日志的复制，然后再解析日志并应用到自身，最终实现 <strong>从库</strong> 的数据和 <strong>主库</strong> 的数据保持一致。MySQL主从复制是MySQL数据库自带功能，无需借助第三方工具。</p>
+<p>二进制日志（BINLOG）记录了所有的 DDL（数据定义语言）语句和 DML（数据操纵语言）语句，但是不包括数据查询语句。此日志对于灾难时的数据恢复起着极其重要的作用，MySQL的主从复制， 就是通过该binlog实现的。默认MySQL是未开启该日志的。</p>
+<p><strong>MySQL的主从复制原理如下：</strong></p>
+<p><img src="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/Snipaste_2025-08-13_14-44-15.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/Snipaste_2025-08-13_14-44-15.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><strong>MySQL复制过程分成三步：</strong></p>
+<p>1). MySQL master 将数据变更写入二进制日志( binary log)</p>
+<p>2). slave将master的binary log拷贝到它的中继日志（relay log）</p>
+<p>3). slave重做中继日志中的事件，将数据变更反映它自己的数据</p>
+<h2 id="1、主库配置"><a href="#1、主库配置" class="headerlink" title="1、主库配置"></a>1、<strong>主库配置</strong></h2><p><strong>1、MySQL 默认加载 my.cnf</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[mysqld]</span><br><span class="line">log-bin=mysql-bin   #[必须]启用二进制日志</span><br><span class="line">server-id=128      #[必须]服务器唯一ID(唯一即可)</span><br><span class="line">expire_logs_days=7</span><br><span class="line">max_binlog_size=100M</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">docker run --privileged -d -p <span class="number">3306</span>:<span class="number">3306</span> \</span><br><span class="line">  -v /data/dockerData/mysql/conf/my.cnf:/etc/mysql/conf.d/my.cnf \</span><br><span class="line">  -v /data/dockerData/mysql/logs:/logs \</span><br><span class="line">  -v /data/dockerData/mysql/data:/<span class="keyword">var</span>/lib/mysql \</span><br><span class="line">  -e MYSQL_ROOT_PASSWORD=<span class="number">1234</span> \</span><br><span class="line">  --name mysql5<span class="number">.7</span> \</span><br><span class="line">  mysql:<span class="number">5.7</span> \</span><br><span class="line">  --log-bin=/<span class="keyword">var</span>/lib/mysql/mysql-bin  # 强制启用binlog（确保生效）</span><br></pre></td></tr></table></figure>
+
+<p>2、<strong>验证</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># 进入容器</span><br><span class="line">docker exec -it mysql5.7 mysql -uroot -p1234</span><br><span class="line"># 查看binlog是否启用</span><br><span class="line">show variables like &#x27;log_bin&#x27;;</span><br><span class="line"># 查看主库状态</span><br><span class="line">show master status;</span><br></pre></td></tr></table></figure>
+
+<p><strong>3、创建数据同步的用户并授权</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">GRANT REPLICATION SLAVE ON *.* to &#x27;xiaoming&#x27;@&#x27;%&#x27; identified by &#x27;Root@251314&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>注：上面SQL的作用是创建一个用户 xiaoming ，密码为 Root@123456  ，并且给xiaoming用户授予REPLICATION SLAVE权限。常用于建立复制时所需要用到的用户权限，也就是slave必须被master授权具有该权限的用户，才能通过该用户复制。 </p>
+<p><strong>4、登录Mysql数据库，查看master同步状态</strong></p>
+<p>执行下面SQL，记录下结果中<strong>File</strong>和<strong>Position</strong>的值</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show master status;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/1755072416433.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/1755072416433.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p><img src="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/1755072451506.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/1755072451506.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>注：上面SQL的作用是查看Master的状态，执行完此SQL后不要再执行任何操作</p>
+<h2 id="2、从库配置"><a href="#2、从库配置" class="headerlink" title="2、从库配置"></a>2、<strong>从库配置</strong></h2><p><strong>修改Mysql数据库的配置文件&#x2F;etc&#x2F;my.cnf</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server-id=201 	#[必须]服务器唯一ID</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/1755072533392.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/1755072533392.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">docker run --privileged -d -p 3306:3306 \</span><br><span class="line">  -v /data/dockerData/mysql/conf/my.cnf:/etc/mysql/conf.d/my.cnf \</span><br><span class="line">  -v /data/dockerData/mysql/logs:/logs \</span><br><span class="line">  -v /data/dockerData/mysql/data:/var/lib/mysql \</span><br><span class="line">  -e MYSQL_ROOT_PASSWORD=1234 \</span><br><span class="line">  --name mysql5.7 \</span><br><span class="line">  mysql:5.7</span><br></pre></td></tr></table></figure>
+
+<p><strong>登录Mysql数据库，设置主库地址及同步位置</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 进入容器</span><br><span class="line">docker exec -it mysql5.7 mysql -uroot -p1234</span><br><span class="line"></span><br><span class="line">stop slave;</span><br><span class="line"></span><br><span class="line">change master to master_host=&#x27;192.168.60.128&#x27;,master_user=&#x27;xiaoming&#x27;,master_password=&#x27;Root@251314&#x27;,master_log_file=&#x27;mysql-bin.000002&#x27;,master_log_pos=154;</span><br><span class="line"></span><br><span class="line">start slave;</span><br></pre></td></tr></table></figure>
+
+<p>参数说明：</p>
+<p>​	A. master_host : 主库的IP地址</p>
+<p>​	B. master_user : 访问主库进行主从复制的用户名(上面在主库创建的)</p>
+<p>​	C. master_password : 访问主库进行主从复制的用户名对应的密码</p>
+<p>​	D. master_log_file : 从哪个日志文件开始同步(上述查询master状态中展示的有)</p>
+<p>​	E. master_log_pos : 从指定日志文件的哪个位置开始同步(上述查询master状态中展示的有)</p>
+<p><strong>查看从数据库的状态</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show slave status\G</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/Snipaste_2025-08-13_16-12-02.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/Snipaste_2025-08-13_16-12-02.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>MySQL命令行技巧：</p>
+<p>​	\G : 在MySQL的sql语句后加上\G，表示将查询结果进行按列打印，可以使每个字段打印到单独的行。即将查到的结构旋转90度变成纵向；</p>
+<h1 id="2、读写分离案例"><a href="#2、读写分离案例" class="headerlink" title="2、读写分离案例"></a>2、<strong>读写分离案例</strong></h1><p>对日益增加的系统访问量，数据库的吞吐量面临着巨大瓶颈。 对于同一时刻有大量并发读操作和较少写操作类型的应用系统来说，将数据库拆分为<strong>主库</strong>和<strong>从库</strong>，主库负责处理事务性的增删改操作，从库负责处理查询操作，能够有效的避免由数据更新导致的行锁，使得整个系统的查询性能得到极大的改善。</p>
+<p><img src="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/1755072836452.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/1755072836452.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+<p>Sharding-JDBC定位为轻量级Java框架，在Java的JDBC层提供的额外服务。 它使用客户端直连数据库，以jar包形式提供服务，无需额外部署和依赖，可理解为增强版的JDBC驱动，完全兼容JDBC和各种ORM框架。</p>
+<p>使用Sharding-JDBC可以在程序中轻松的实现数据库读写分离。</p>
+<p>用法：</p>
+<p>1、在pom.xml中增加shardingJdbc的maven坐标</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;dependency&gt;</span><br><span class="line">    &lt;groupId&gt;org.apache.shardingsphere&lt;/groupId&gt;</span><br><span class="line">    &lt;artifactId&gt;sharding-jdbc-spring-boot-starter&lt;/artifactId&gt;</span><br><span class="line">    &lt;version&gt;4.0.0-RC1&lt;/version&gt;</span><br><span class="line">&lt;/dependency&gt;</span><br></pre></td></tr></table></figure>
+
+<p>2、在application.yml中增加数据源的配置</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">spring:</span><br><span class="line">  shardingsphere:</span><br><span class="line">    datasource:</span><br><span class="line">      names:</span><br><span class="line">        master,slave</span><br><span class="line">      # 主数据源</span><br><span class="line">      master:</span><br><span class="line">        type: com.alibaba.druid.pool.DruidDataSource</span><br><span class="line">        driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">        url: jdbc:mysql://192.168.138.100:3306/rw?serverTimezone=Asia/Shanghai&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</span><br><span class="line">        username: root</span><br><span class="line">        password: root</span><br><span class="line">      # 从数据源</span><br><span class="line">      slave:</span><br><span class="line">        type: com.alibaba.druid.pool.DruidDataSource</span><br><span class="line">        driver-class-name: com.mysql.cj.jdbc.Driver</span><br><span class="line">        url: jdbc:mysql://192.168.138.101:3306/rw?serverTimezone=Asia/Shanghai&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;zeroDateTimeBehavior=convertToNull&amp;useSSL=false&amp;allowPublicKeyRetrieval=true</span><br><span class="line">        username: root</span><br><span class="line">        password: root</span><br><span class="line">    masterslave:</span><br><span class="line">      # 读写分离配置</span><br><span class="line">      load-balance-algorithm-type: round_robin #轮询</span><br><span class="line">      # 最终的数据源名称</span><br><span class="line">      name: dataSource</span><br><span class="line">      # 主库数据源名称</span><br><span class="line">      master-data-source-name: master</span><br><span class="line">      # 从库数据源名称列表，多个逗号分隔</span><br><span class="line">      slave-data-source-names: slave</span><br><span class="line">    props:</span><br><span class="line">      sql:</span><br><span class="line">        show: true #开启SQL显示，默认false</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/1755072960206.jpg" class="lazyload" data-srcset="https://raw.githubusercontent.com/zhangzc-hub/img/main/img/1755072960206.jpg" srcset="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="></p>
+
+  </div>
+  
+  
+    
+    <div class='footer'>
+       <!-- 参考资料、相关资料等 -->
+      
+       <!-- 相关文章 -->
+      
+      <!-- 版权声明组件 -->
+      
+        
+          <div class='copyright'>
+            <blockquote>
+              
+                
+                  <p>博客内容遵循 署名-非商业性使用-相同方式共享 4.0 国际 (CC BY-NC-SA 4.0) 协议</p>
+
+                
+              
+            </blockquote>
           </div>
         
       
-    
-  </section>
+      <!-- 打赏组件 -->
+      
+    </div>
+  
   
     
+
+
+  <div class='article-meta' id="bottom">
+    <div class='new-meta-box'>
+      
+        
+          <div class="new-meta-item date" itemprop="dateModified" datetime="2025-11-05T10:13:30+08:00">
+  <a class='notlink'>
+    <i class="fa-solid fa-edit fa-fw" aria-hidden="true"></i>
+    <p>更新于：2025年11月5日</p>
+  </a>
+</div>
+
+        
+      
+        
+          
+  
+  <div class="new-meta-item meta-tags"><a class="tag" href="/tags/MySQL/" rel="nofollow"><i class="fa-solid fa-hashtag fa-fw" aria-hidden="true"></i><p>MySQL</p></a></div>
+  <span hidden itemprop="keywords">MySQL</span>
+
+
+        
+      
+    </div>
+    <!-- Custom Files bottomMeta begin -->
+    
+    <!-- Custom Files bottomMeta end -->
+  </div>
+
+
+  
+  
+
+  
+    <div class="prev-next">
+      
+        <a class='prev' href='/2025/03/20/Redis%E9%9B%86%E7%BE%A4%E6%90%AD%E5%BB%BA/'>
+          <p class='title'><i class="fa-solid fa-chevron-left" aria-hidden="true"></i>Redis集群搭建</p>
+          <p class='content'>Redis集群搭建1、Redis主从集群1.1、集群结构搭建的主从集群结构如图：
+
+共包含三个节点，一个主节点，两个从节点。
+在同一台虚拟机中开启3个redis实例，模拟主从集群，信息如下：
+
+...</p>
+        </a>
+      
+      
+        <a class='next' href='/2024/08/08/SpringCache%E6%A1%86%E6%9E%B6%E7%9A%84%E4%BD%BF%E7%94%A8/'>
+          <p class='title'>SpringCache框架的使用<i class="fa-solid fa-chevron-right" aria-hidden="true"></i></p>
+          <p class='content'>SpringCache框架的使用1、注解
+
+
+注解
+说明
+
+
+
+@EnableCaching 
+开启缓存注解功能
+
+
+@Cacheable 
+在方法执行前spring先查看缓存中是否有数据，如果...</p>
+        </a>
+      
+    </div>
+  
+  <!-- Custom Files postEnd begin-->
+  
+  <!-- Custom Files postEnd end-->
+</article>
+
+
   
 
 
+  <article class="post white-box shadow floatable blur" id="comments">
+    <span hidden>
+      <meta itemprop="discussionUrl" content="/2024/08/13/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6+%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/index.html#comments">
+    </span>
+    <p ct><i class='fa-solid fa-comments'></i> 评论</p>
     
-  
+
+    <div id="layoutHelper-comments"></div>
+
+  </article>
+
+
+
+
+
+
 </div>
 <aside id='l_side' itemscope itemtype="http://schema.org/WPSideBar">
   
@@ -2496,252 +2674,60 @@ GitHub创建个人仓库
     
     
       
-<section class="widget blogger desktop mobile pjax">
-  <div class='content'>
-    
-      
-        <a class='avatar flat-box rectangle' href='/about/'>
-          <img no-lazy src='https://raw.githubusercontent.com/zhangzc-hub/img/main/img/12.jpg'/>
-        </a>
-      
-    
-    
-      <div class='text'>
-        
-          <h2>Zhangzechang</h2>
-        
-        
-        
-          <p><span id="jinrishici-sentence">ZC程序员</span></p>
-          <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
-        
-      </div>
-    
-    
-      <div class="social-wrapper">
-        
-          
-            <a href="/atom.xml"
-              class="social fa-solid fa-rss flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="mailto:18713822182@163.com"
-              class="social fa-solid fa-envelope flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-          
-            <a href="https://github.com/zhangzc-hub/zhangzc-hub.github.io.git"
-              class="social fab fa-github flat-btn"
-              target="_blank"
-              rel="external nofollow noopener noreferrer">
-              
-            </a>
-          
-        
-      </div>
-    
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget category desktop pjax">
-    
-  <header>
-    
-      <a href='/blog/categories/'><i class="fa-solid fa-folder-open fa-fw" aria-hidden="true"></i><span class='name'>文章分类</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <ul class="entry navigation">
-        
-          <li><a class="flat-box"
-            title="/categories/Hello-World/" href="/categories/Hello-World/"
-            active-action="action-categoriesHello-World"
-            ><div class='name'>Hello World</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Java/" href="/categories/Java/"
-            active-action="action-categoriesJava"
-            ><div class='name'>Java</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/Linux/" href="/categories/Linux/"
-            active-action="action-categoriesLinux"
-            ><div class='name'>Linux</div><div class='badge'>(3)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/MySQL/" href="/categories/MySQL/"
-            active-action="action-categoriesMySQL"
-            ><div class='name'>MySQL</div><div class='badge'>(2)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/cmd/" href="/categories/cmd/"
-            active-action="action-categoriescmd"
-            ><div class='name'>cmd</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/hexo/" href="/categories/hexo/"
-            active-action="action-categorieshexo"
-            ><div class='name'>hexo</div><div class='badge'>(1)</div></a></li>
-        
-          <li><a class="flat-box"
-            title="/categories/ssl/" href="/categories/ssl/"
-            active-action="action-categoriesssl"
-            ><div class='name'>ssl</div><div class='badge'>(1)</div></a></li>
-        
-      </ul>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-  
-  <section class="widget tagcloud desktop mobile pjax">
-    
-  <header>
-    
-      <a href='/blog/tags/'><i class="fa-solid fa-tags fa-fw" aria-hidden="true"></i><span class='name'>热门标签</span></a>
-    
-  </header>
-
-
-    <div class='content'>
-      <a href="/tags/Hello-World/" style="font-size: 14px; color: #999">Hello World</a> <a href="/tags/MySQL/" style="font-size: 24px; color: #555">MySQL</a> <a href="/tags/docker/" style="font-size: 14px; color: #999">docker</a> <a href="/tags/redis/" style="font-size: 24px; color: #555">redis</a> <a href="/tags/ssl/" style="font-size: 14px; color: #999">ssl</a> <a href="/tags/yum/" style="font-size: 14px; color: #999">yum</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 14px; color: #999">博客</a> <a href="/tags/%E8%8B%A5%E4%BE%9D/" style="font-size: 14px; color: #999">若依</a> <a href="/tags/%E8%AF%AD%E9%9B%80/" style="font-size: 14px; color: #999">语雀</a>
-    </div>
-  </section>
-
-
-    
-  
-
-  
-    
-    
-      
-
-<section class="widget desktop mobile pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-clock WISTERIA fa-fw" aria-hidden="true"></i><span class='name'>最近更新</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <ul class="list entry navigation"><li><a class="widget-last" href="/2024/04/05/MySQL%E5%B8%B8%E8%A7%81%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B/"><div class="item"><time>2025-11-05</time><span>MySQL</span></div><span>MySQL常见数据类型</span></a></li><li><a class="widget-last" href="/2025/09/04/%E8%8B%A5%E4%BE%9D%E6%A1%86%E6%9E%B6%E4%B8%AD%E4%BD%BF%E7%94%A8Velocity%E6%A8%A1%E5%9D%97%E5%BC%95%E6%93%8E%E6%94%B9%E9%80%A0%E4%BB%A3%E7%A0%81%E7%94%9F%E6%88%90%E5%8A%9F%E8%83%BD/"><div class="item"><time>2025-11-05</time><span>Java</span></div><span>若依框架中使用Velocity模块引擎改造代码生成功能</span></a></li><li><a class="widget-last" href="/2024/05/21/yuque-dl/"><div class="item"><time>2025-11-05</time><span>cmd</span></div><span>yuque-dl</span></a></li><li><a class="widget-last" href="/2024/07/01/cfssl%E5%B7%A5%E5%85%B7%E5%88%B6%E4%BD%9C%E8%AF%81%E4%B9%A6/"><div class="item"><time>2025-11-05</time><span>ssl</span></div><span>cfssl工具制作证书</span></a></li><li><a class="widget-last" href="/2024/08/13/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6+%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/"><div class="item"><time>2025-11-05</time><span>MySQL</span></div><span>MySQL主从复制+读写分离</span></a></li></ul>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget desktop pjax">
-  
-  <header>
-    
-      <i class="fa-solid fa-award fa-fw" aria-hidden="true"></i><span class='name'>站点信息</span>
-    
-  </header>
-
-
-  <div class='content'>
-    <div class="webinfo">
-      
-        <div class="webinfo-item">
-          <div>文章数目：</div>
-          <div>11 篇</div>
-        </div>
-      
-
-      
-        <div class="webinfo-item">
-          <div>已运行时间：</div>
-          <div id="webinfo-runtime-count"></div>
-        </div>
-      
-
-
-      
-        <div class="webinfo-item">
-          <div>本站总字数：</div>
-          <div>20.1k 字</div>
-        </div>
-      
-
-      
-
-      
-
-      
-        <div class="webinfo-item">
-          <div>最后活动时间：</div>
-          <div id="last-update-show">2025-11-05 日</div>
-        </div>
-      
-    </div>
-  </div>
-</section>
-
-    
-  
-
-  
-    
-    
-      
-<section class="widget text desktop pjax">
-  
-  <header>
-    
-      <a target="_blank" rel="noopener" href='https://github.com/zhangzc-hub/zhangzc-hub.github.io.git'><i class="fab fa-github fa-fw" aria-hidden="true"></i><span class='name'>点个赞吧</span></a>
-    
-  </header>
-
-
-  <div class='content'>
-    
-  </div>
-</section>
-
     
   
 
 
 <div class="widget-sticky pjax">
 
+  
+  
+
+
+  <section class="widget toc-wrapper desktop mobile " id="toc-div" >
+    
+  <header>
+    
+      <i class="fa-solid fa-list fa-fw" aria-hidden="true"></i><span class='name'>本文目录</span>
+    
+  </header>
+
+
+    <div class='content'>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1%E3%80%81%E4%B8%BB%E5%BA%93%E9%85%8D%E7%BD%AE"><span class="toc-text">1、主库配置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2%E3%80%81%E4%BB%8E%E5%BA%93%E9%85%8D%E7%BD%AE"><span class="toc-text">2、从库配置</span></a></li></ol>
+    </div>
+  </section>
+
+  
+
 </div>
 
 
 <!-- 没有 pjax 占位会报错 万恶的 pjax -->
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
+
+  <div class="pjax">
+    <!-- pjax占位 -->
+  </div>
 
   <div class="pjax">
     <!-- pjax占位 -->
@@ -2761,13 +2747,14 @@ GitHub创建个人仓库
 </aside>
 
 
+
           <!--此文件用来存放一些不方便取值的变量-->
 <!--思路大概是将值藏到重加载的区域内-->
 
 <pjax>
 <script>
   window.pdata={}
-  pdata.ispage=false;
+  pdata.ispage=true;
   pdata.commentPath="";
   pdata.commentPlaceholder="";
   pdata.commentConfig={};
@@ -3357,7 +3344,7 @@ GitHub创建个人仓库
 </script>
 
 
-  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"ZC程序员"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/hexo/","name":"hexo"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"ZC程序员","url":"http://example.com/","keywords":"技术, 编程, 生活, 创意, 解决方案","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},"publisher":{"@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage"},"author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"ZC程序员","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"wordCount":0,"image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
+  <script type="application/ld+json">[{"@context":"http://schema.org","@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},{"@context":"http://schema.org","@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","sameAs":["https://github.com/volantis-x"],"description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},{"@context":"http://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"item":{"@id":"http://example.com/","name":"ZC程序员"}},{"@type":"ListItem","position":2,"item":{"@id":"http://example.com/categories/MySQL/","name":"MySQL"}},{"@type":"ListItem","position":3,"item":{"@id":"http://example.com/2024/08/13/MySQL主从复制+读写分离/","name":"MySQL主从复制+读写分离"}}]},{"@context":"http://schema.org","@type":"WebSite","name":"ZC程序员","url":"http://example.com/","keywords":"技术, 编程, 生活, 创意, 解决方案","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。"},"publisher":{"@type":"Organization","name":"ZC程序员","url":"http://example.com/","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"potentialAction":{"@type":"SearchAction","name":"Site Search","target":{"@type":"EntryPoint","urlTemplate":"http://example.com?s={search_term_string}"},"query-input":"required name=search_term_string"}},{"@context":"http://schema.org","@type":"BlogPosting","headline":"MySQL主从复制+读写分离","description":"这里是 ZC 的技术博客，一名热爱编程的程序员，分享技术心得和个人生活感悟。让我们一起在代码的海洋中遨游，感受技术与生活的美妙交响。","inLanguage":"zh-CN","mainEntityOfPage":{"@type":"WebPage","@id":"http://example.com/2024/08/13/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6+%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/"},"author":{"@type":"Person","name":"ZZC","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png"},"url":"http://example.com/"},"publisher":{"@type":"Organization","name":"ZC程序员","logo":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}},"url":"http://example.com/2024/08/13/MySQL%E4%B8%BB%E4%BB%8E%E5%A4%8D%E5%88%B6+%E8%AF%BB%E5%86%99%E5%88%86%E7%A6%BB/","wordCount":0,"datePublished":"2024-08-13T02:34:26.000Z","dateModified":"2025-11-05T02:13:30.696Z","articleSection":"MySQL","keywords":"MySQL","image":{"@type":"ImageObject","url":"https://unpkg.com/volantis-static@0.0.1654736714924/media/org.volantis/blog/favicon/android-chrome-192x192.png","width":192,"height":192}}]</script>
 
 
 
